@@ -1,0 +1,206 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: none;
+    /* Ensure no background from html/body */
+}
+
+.beeStoryDesign {
+    background:
+        url('../assets/loginPage/clouds.svg') -1% 5% no-repeat,
+        url('../assets/loginPage/clouds.svg') 100% 5% no-repeat,
+        url('../assets/loginPage/bee7.svg') 101% 50% no-repeat,
+        url('../assets/loginPage/beehive.svg') 0% 50% no-repeat,
+        url('../assets/loginPage/bees.svg') 95% 66% no-repeat,
+        url('../assets/loginPage/bee5.svg') 20% 90% no-repeat,
+        url('../assets/loginPage/bee.svg') 70% 90% no-repeat,
+        url('../assets/loginPage/bee9.svg') 90% 95% no-repeat,
+        url('../assets/loginPage/flower12.svg') 100% 105% no-repeat,
+        url('../assets/loginPage/flower2.svg') 90% 105% no-repeat,
+        url('../assets/loginPage/flower14.svg') 80% 105% no-repeat,
+        url('../assets/loginPage/flower4.svg') 70% 105% no-repeat,
+        url('../assets/loginPage/flower5.svg') 60% 105% no-repeat,
+        url('../assets/loginPage/flower6.svg') 50% 105% no-repeat,
+        url('../assets/loginPage/flower7.svg') 40% 105% no-repeat,
+        url('../assets/loginPage/flower8.svg') 30% 105% no-repeat,
+        url('../assets/loginPage/flower9.svg') 20% 105% no-repeat,
+        url('../assets/loginPage/flower16.svg') 10% 105% no-repeat,
+        url('../assets/loginPage/flower11.svg') 1% 105% no-repeat,
+        url('../assets/loginPage/grass.svg') 100% 120% no-repeat,
+        url('../assets/loginPage/grass.svg') 90% 120% no-repeat,
+        url('../assets/loginPage/grass2.svg') 80% 120% no-repeat,
+        url('../assets/loginPage/grass.svg') 70% 120% no-repeat,
+        url('../assets/loginPage/grass.svg') 60% 120% no-repeat,
+        url('../assets/loginPage/grass2.svg') 50% 120% no-repeat,
+        url('../assets/loginPage/grass.svg') 40% 120% no-repeat,
+        url('../assets/loginPage/grass.svg') 30% 120% no-repeat,
+        url('../assets/loginPage/grass2.svg') 20% 120% no-repeat,
+        url('../assets/loginPage/grass.svg') 10% 120% no-repeat,
+        url('../assets/loginPage/grass2.svg') 1% 120% no-repeat,
+        linear-gradient(to top, #ffe8ca, #70e1f5);
+    background-size:
+        200px, 200px,
+        150px, 150px,
+        40px, 40px, 40px, 40px,
+        100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px,
+        200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px,
+        cover;
+    /* Set the sizes for the background layers */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.beeStoryDesign .content-box {
+    background-color: rgba(255, 255, 255, 0.852);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    /* Make the box relative for absolute positioning inside */
+    margin-top: 20px;
+}
+
+.beeStoryDesign .storyPage-image {
+    width: 800px;
+    /* Set the image width to 70% */
+    /* Cap the maximum width */
+    margin: 5px 0 0;
+    /* Adjust margin */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.beeStoryDesign .storyPage-text {
+    color: #000000;
+    font-family: 'El Messiri', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+.beeStoryDesign .storyPage-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* Spread buttons across */
+    width: 100%;
+}
+
+.beeStoryDesign .back-button {
+    background-color: #ffcc00;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    position: absolute;
+    /* Make it absolutely positioned */
+    top: 10px;
+    /* Position it 10px from the top */
+    left: 10px;
+    /* Position it 10px from the left */
+}
+
+.beeStoryDesign .back-button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.beeStoryDesign .next-button {
+    background-color: #ffcc00;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    position: absolute;
+    /* Absolutely position the button */
+    bottom: 20px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+}
+
+.beeStoryDesign .next-button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+
+.beeStoryDesign .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    /* Space between the buttons */
+    position: absolute;
+    /* Absolutely position the options on top of the image */
+    top: 70%;
+    /* Position the buttons around the middle of the image */
+    left: 50%;
+    /* Center the buttons horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust to perfectly center them */
+    z-index: 10;
+    /* Ensure the options stay above the image */
+    width: auto;
+    /* Ensure the width is based on the content */
+}
+
+.beeStoryDesign .options button {
+    background-color: #ffcc00;
+    color: white;
+    font-size: 18px;
+    font-family: 'El Messiri', sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.beeStoryDesign .options button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+}
+
+.beeStoryDesign .storyPage-audio {
+    position: absolute;
+    /* Absolutely position the audio */
+    top: 20px;
+    /* Distance from the top */
+    right: 20px;
+    /* Distance from the right */
+    z-index: 10;
+    /* Ensure it stays on top of other elements */
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+}

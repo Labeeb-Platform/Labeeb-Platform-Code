@@ -1,0 +1,107 @@
+/* Main container with gradient background */
+.storylist-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Ensure items are at the top */
+    align-items: center;
+    /* Center horizontally */
+    height: 100vh;
+    width: 100vw;
+    /* Gradient similar to image */
+    padding: 20px;
+    margin: 0;
+
+
+    background:
+        url('../assets/loginPage/star4.svg') 10% 5% no-repeat,
+            url('../assets/loginPage/star4.svg') 20% 10% no-repeat,
+            url('../assets/loginPage/star4.svg') 30% 15% no-repeat,
+            url('../assets/loginPage/star4.svg') 40% 8% no-repeat,
+            url('../assets/loginPage/star4.svg') 50% 12% no-repeat,
+            url('../assets/loginPage/star4.svg') 60% 10% no-repeat,
+            url('../assets/loginPage/star4.svg') 70% 18% no-repeat,
+            url('../assets/loginPage/star4.svg') 80% 5% no-repeat,
+            url('../assets/loginPage/star4.svg') 90% 20% no-repeat,
+            url('../assets/loginPage/star4.svg') 85% 25% no-repeat,
+            url('../assets/loginPage/star4.svg') 75% 30% no-repeat,
+            url('../assets/loginPage/star4.svg') 65% 35% no-repeat,
+            url('../assets/loginPage/star4.svg') 55% 40% no-repeat,
+            url('../assets/loginPage/star4.svg') 45% 45% no-repeat,
+            url('../assets/loginPage/star4.svg') 35% 50% no-repeat,
+            url('../assets/loginPage/star4.svg') 25% 55% no-repeat,
+  
+     
+            url('../assets/loginPage/star4.svg') 70% 50% no-repeat,
+            url('../assets/loginPage/star4.svg') 80% 55% no-repeat,
+            url('../assets/loginPage/star4.svg') 90% 60% no-repeat,
+            url('../assets/loginPage/star4.svg') 85% 65% no-repeat,
+        
+
+
+            url('../assets/loginPage/moon2.svg') 2% 5% no-repeat,
+    
+            url('../assets/loginPage/camel4.svg') 5% 105% no-repeat,
+            url('../assets/loginPage/camel4.svg') 35% 105% no-repeat,
+            url('../assets/loginPage/camel4.svg') 66% 105% no-repeat,
+            url('../assets/loginPage/camel4.svg') 95% 105% no-repeat,
+    
+            url('../assets/loginPage/dunes.svg') -10% 900% no-repeat,
+    
+            linear-gradient(to top, #fff1e6 , #f8a17d); 
+    
+        background-size: 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px,
+        100px, 300px,300px,300px, 300px, 650px, 650px, cover;
+        position: relative;
+}
+
+/* Container for the story boxes */
+.storyList-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0;
+    /* Ensure no margin is adding space */
+    padding-top: 80px;
+    /* Small padding to adjust the top position */
+}
+
+/* Individual story box */
+.storyList-box {
+    background-color: #fff;
+    border-radius: 20px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Add a shadow to the box */
+}
+
+.storyList-box:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the box on hover */
+}
+
+/* Image inside each story box */
+.storyList-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Title under each story box */
+.storyList-box p {
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    /* Friendly font */
+    color: #333;
+    margin: 0;
+}

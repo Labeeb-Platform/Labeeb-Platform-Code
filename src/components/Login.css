@@ -1,0 +1,201 @@
+/* Login.css */
+
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    overflow: hidden;
+    cursor: default;
+    user-select: none;
+    outline: none;
+    
+
+background: 
+    url('../assets/loginPage/star.svg') 80% 45% no-repeat,
+    url('../assets/loginPage/star.svg') 85% 10% no-repeat,
+    url('../assets/loginPage/star.svg') 90% 55% no-repeat,
+    url('../assets/loginPage/star.svg') 70% 18% no-repeat,
+    url('../assets/loginPage/star.svg') 95% 30% no-repeat,
+    url('../assets/loginPage/star.svg') 96% 8% no-repeat,
+
+    url('../assets/loginPage/star.svg') 30% 50% no-repeat,
+    url('../assets/loginPage/star.svg') 10% 40% no-repeat,
+    url('../assets/loginPage/star.svg') 25% 22% no-repeat,
+
+    url('../assets/loginPage/bird.svg') 20% 40% no-repeat,
+
+
+    url('../assets/loginPage/clouds.svg') 80% 25% no-repeat,
+    url('../assets/loginPage/cloud-computing.svg') 30% 20% no-repeat,
+
+    url('../assets/loginPage/sun.svg') 5% 10% no-repeat,
+
+    url('../assets/loginPage/cactus2.svg') 89% 102% no-repeat,
+    url('../assets/loginPage/cactus2.svg') 100% 102% no-repeat,
+    
+    
+    url('../assets/loginPage/camel4.svg') 79% 101.5% no-repeat,
+
+    url('../assets/loginPage/dunes.svg') 51% 1000% no-repeat,
+    url('../assets/loginPage/dunes.svg') -10% 700% no-repeat,
+
+    linear-gradient(to top, #FFD194, #70e1f5);
+    
+    background-size:   10px, 10px, 10px, 10px,10px, 10px,
+        10px,
+        10px,
+        10px,
+        40px, 150px, 150px,150px,100px, 180px, 140px,650px, 650px, cover;
+    /* Set the sizes for the background layers */
+    position: relative;
+    
+}
+
+.login-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 600px;
+    /* Increase the width for larger forms */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    /* Bigger shadow */
+    text-align: center;
+    overflow: hidden;
+    cursor: default;
+}
+
+.login-card h1,
+.login-card p,
+.login-card button {
+    cursor: default;
+    /* No text cursor on non-text areas */
+}
+
+.login-card h1 {
+    font-size: 48px;
+    font-family: 'El Messiri', sans-serif;
+    color: #ffcc00;
+}
+
+.login-card input {
+    margin: 15px 0;
+    /* More margin for spacing */
+    padding: 15px;
+    /* Larger padding for bigger input fields */
+    width: 80%;
+    /* Set input width to be responsive */
+    font-size: 18px;
+    /* Larger font size for input */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: text;
+}
+
+.login-card button:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+
+.gender-selection {
+    margin-top: 30px;
+    cursor: default;
+    /* More margin above gender selection */
+}
+
+.gender-selection h3 {
+    font-size: 22px;
+    font-family: 'El Messiri',sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+.gender-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    cursor: pointer;
+    /* Add margin below the gender options */
+}
+
+.gender-option {
+    cursor: pointer;
+    text-align: center;
+}
+
+.gender-option img {
+    width: 120px;
+    /* Larger character icons */
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+
+}
+
+.gender-option.selected img {
+    border-color: #4caf50;
+    cursor: pointer;
+    /* Highlight the selected character */
+}
+
+.gender-option:hover img {
+    transform: scale(1.1);
+    border-color: #ffcc00;
+    cursor: pointer;
+}
+
+.gender-option p {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'El Messiri',sans-serif;
+    /* Larger font size for gender label */
+    color: #333;
+    cursor: pointer;
+}
+
+.login-card button {
+    margin-top: 30px;
+    /* Larger margin at the top */
+    padding: 15px 30px;
+    background-color: #ffcc00;
+    font-size: 18px;
+    font-family: 'El Messiri', sans-serif;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    width: 80%;
+    cursor: pointer;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .login-card {
+        width: 100%;
+        /* Make login card full width on mobile */
+        padding: 30px;
+    }
+
+    .login-card h1 {
+        font-size: 36px;
+    }
+
+    .login-card input {
+        width: 100%;
+    }
+
+    .login-card button {
+        width: 100%;
+    }
+}
+
+
+
+

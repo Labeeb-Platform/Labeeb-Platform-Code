@@ -9,9 +9,9 @@ const StoryList = () => {
   const stories = [
     { title: 'قصة النحلة النشيطة', image: '/Images/bee2.svg', folder: '/data/beeStory', design: 'beeStoryDesign' },
     { title: 'قصة فارس والفضاء', image: '/Images/astronaut.svg', folder: '/data/spaceStory', design: 'spaceStoryDesign' },
-    { title: 'Story 3', image: '/Images/story3.png', folder: '/data/story3', design: 'story3Design' },
-    { title: 'Story 4', image: '/Images/story4.png', folder: '/data/story4', design: 'story4Design' },
-    { title: 'Story 5', image: '/Images/story5.png', folder: '/data/story5', design: 'story5Design' }
+    { title: 'قصة الابل و الارقام', image: '/Images/camel.svg', folder: '/data/camelStory', design: 'camelStoryDesign' },
+    { title: 'قصة لينة صديقة الارض الخضراء', image: '/Images/green.svg', folder: '/data/greenEarthStory', design: 'greenEarthStoryDesign' },
+    { title: 'قصة رحلة ليلى الى جبال الطائف', image: '/Images/mountain3.svg', folder: '/data/taifTripStory', design: 'taifTripStoryDesign' }
   ];
 
   const handleStoryClick = (story) => {

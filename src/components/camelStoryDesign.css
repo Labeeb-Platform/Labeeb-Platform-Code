@@ -1,0 +1,433 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: none;
+    /* Ensure no background from html/body */
+}
+
+.camelStoryDesign {
+    background:
+        url('../assets/loginPage/star8.svg') 20% 5% no-repeat,
+        url('../assets/loginPage/star5.svg') 85% 10% no-repeat,
+        url('../assets/loginPage/star9.svg') 50% 0% no-repeat,
+        url('../assets/loginPage/star8.svg') 10% 20% no-repeat,
+        url('../assets/loginPage/star5.svg') 80% 40% no-repeat,
+        url('../assets/loginPage/star9.svg') 30% 35% no-repeat,
+        url('../assets/loginPage/star8.svg') 20% 50% no-repeat,
+        url('../assets/loginPage/star5.svg') 25% 40% no-repeat,
+        url('../assets/loginPage/star9.svg') 85% 55% no-repeat,
+        url('../assets/loginPage/star8.svg') 90% 60% no-repeat,
+        url('../assets/loginPage/star5.svg') 45% 65% no-repeat,
+        url('../assets/loginPage/star9.svg') 70% 70% no-repeat,
+        url('../assets/loginPage/star9.svg') 90% 60% no-repeat,
+        url('../assets/loginPage/star9.svg') 100% 70% no-repeat,
+        url('../assets/loginPage/star8.svg') 15% 80% no-repeat,
+        url('../assets/loginPage/star5.svg') 95% 85% no-repeat,
+        url('../assets/loginPage/star9.svg') 40% 90% no-repeat,
+        url('../assets/loginPage/star8.svg') 20% 90% no-repeat,
+        url('../assets/loginPage/star9.svg') 10% 95% no-repeat,
+        url('../assets/loginPage/star9.svg') 1% 80% no-repeat,
+        url('../assets/loginPage/star8.svg') 3% 50% no-repeat,
+        url('../assets/loginPage/star8.svg') 30% 95% no-repeat,
+        url('../assets/loginPage/star5.svg') 80% 5% no-repeat,
+        url('../assets/loginPage/star9.svg') 60% 75% no-repeat,
+        url('../assets/loginPage/star8.svg') 10% 50% no-repeat,
+        url('../assets/loginPage/star5.svg') 55% 80% no-repeat,
+        url('../assets/loginPage/star9.svg') 25% 85% no-repeat,
+        url('../assets/loginPage/star8.svg') 35% 10% no-repeat,
+        url('../assets/loginPage/star5.svg') 65% 20% no-repeat,
+        url('../assets/loginPage/star9.svg') 15% 60% no-repeat,
+        url('../assets/loginPage/star8.svg') 90% 10% no-repeat,
+        url('../assets/loginPage/star5.svg') 40% 30% no-repeat,
+        url('../assets/loginPage/star9.svg') 70% 45% no-repeat,
+
+
+
+        url('../assets/loginPage/star5.svg') 1% 5% no-repeat,
+        url('../assets/loginPage/star9.svg') 0% 10% no-repeat,
+        url('../assets/loginPage/star8.svg') 3% 15% no-repeat,
+        url('../assets/loginPage/star5.svg') 4% 40% no-repeat,
+        url('../assets/loginPage/star9.svg') 5% 70% no-repeat,
+
+        url('../assets/loginPage/star5.svg') 50% 98% no-repeat,
+        url('../assets/loginPage/star9.svg') 77% 99% no-repeat,
+        url('../assets/loginPage/star8.svg') 90% 95% no-repeat,
+        url('../assets/loginPage/star5.svg') 80% 70% no-repeat,
+        url('../assets/loginPage/star9.svg') 100% 77% no-repeat,
+
+        url('../assets/loginPage/star5.svg') 90% 15% no-repeat,
+        url('../assets/loginPage/star9.svg') 95% 40% no-repeat,
+        url('../assets/loginPage/star8.svg') 98% 25% no-repeat,
+        url('../assets/loginPage/star5.svg') 90% 66% no-repeat,
+        url('../assets/loginPage/star9.svg') 99% 50% no-repeat,
+
+
+
+
+
+
+        /* 48 star - 10 */
+
+        url('../assets/loginPage/rocket5.svg') 10% 95% no-repeat,
+
+
+        url('../assets/loginPage/asteroid2.svg') 100% 5% no-repeat,
+        url('../assets/loginPage/planet7.svg') 85% 10% no-repeat,
+        url('../assets/loginPage/planet3.svg') 1% 550% no-repeat,
+        url('../assets/loginPage/planet5.svg') 10% 40% no-repeat,
+
+
+        /* 4 planest - 200 */
+
+
+
+        url('../assets/loginPage/astronaut3.svg') 85% 95% no-repeat,
+
+        url('../assets/loginPage/satellite.svg') 5% 25% no-repeat,
+        url('../assets/loginPage/asteroid.svg') 100% 90% no-repeat,
+
+        url('../assets/loginPage/sparkle.svg') 77% 90% no-repeat,
+        url('../assets/loginPage/sparkle.svg') 20% 20% no-repeat,
+        url('../assets/loginPage/sparkle.svg') 1% 70% no-repeat,
+
+
+
+
+
+        linear-gradient(to top, #000000, #00065a);
+    background-size:
+        10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px,
+        10px,
+        10px,
+        10px,
+        10px,
+        10px,
+        10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px,
+
+        /*  rocket  */
+        200px,
+        /*  planet  */
+        80px, 170px, 600px, 150px,
+
+        /* astronaut */
+        80px,
+        /* astroid */
+        70px, 200px,
+        /* sparkls */
+        40px, 50px, 20px,
+        cover;
+    /* Set the sizes for the background layers */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.camelStoryDesign .content-box {
+    background-color: rgba(255, 255, 255, 0.768);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    /* Make the box relative for absolute positioning inside */
+    margin-top: 20px;
+}
+
+.camelStoryDesign .storyPage-image {
+    width: 800px;
+    /* Set the image width to 70% */
+    /* Cap the maximum width */
+    margin: 0 0 0;
+    /* Adjust margin */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    transform-origin: center right;
+    /* Set the origin for right-to-left flipping */
+    backface-visibility: hidden;
+    /* Hide the back of the image during the flip */
+    transition: transform 1.5s ease-in-out;
+    perspective: 1000px;
+}
+
+
+
+
+.camelStoryDesign .storyPage-text {
+    color: #000000;
+    font-family: 'El Messiri', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+.camelStoryDesign .storyPage-text {
+    color: #000000;
+    font-family: 'El Messiri', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+
+.camelStoryDesign .storyPage-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* Spread buttons across */
+    width: 100%;
+}
+
+.camelStoryDesign .back-button {
+    background-color: transparent;
+    /* Remove background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    display: flex;
+    align-items: center;
+    /* Align image and text */
+    padding: 10px 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.camelStoryDesign .back-button:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.camelStoryDesign .back-button-image {
+    width: 70px;
+    /* Set a suitable size for the image */
+    height: auto;
+    margin-right: 8px;
+    /* Space between image and text */
+}
+
+.camelStoryDesign .back-button span {
+    color: #ff9d00;
+    /* Customize the text color */
+    font-size: 16px;
+}
+
+.camelStoryDesign .next-button {
+    background-color: #54ab3a;
+    border-color: #54ab3a;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    position: absolute;
+    /* Absolutely position the button */
+    bottom: 20px;
+    /* Distance from the bottom */
+    right: 45px;
+    /* Distance from the right */
+}
+
+.camelStoryDesign .next-button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+
+.camelStoryDesign .back-step-button {
+    position: absolute;
+    bottom: 20px;
+    left: 45px;
+    background-color: #54ab3a;
+    border-color: #54ab3a;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.camelStoryDesign .back-step-button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+}
+
+.camelStoryDesign .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    /* Space between the buttons */
+    position: absolute;
+    /* Absolutely position the options on top of the image */
+    top: 48%;
+    /* Position the buttons around the middle of the image */
+    left: 50%;
+    /* Center the buttons horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust to perfectly center them */
+    z-index: 10;
+    /* Ensure the options stay above the image */
+    width: auto;
+    /* Ensure the width is based on the content */
+}
+
+.camelStoryDesign .options button {
+    background-color: #ffcc00;
+    color: white;
+    font-size: 18px;
+    font-family: 'El Messiri', sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.camelStoryDesign .options button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+}
+
+.camelStoryDesign .storyPage-audio {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.camelStoryDesign .storyPage-audio audio {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-panel {
+    background-color: #ffcc00;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-current-time-display,
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-time-remaining-display,
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-timeline {
+    display: none;
+}
+
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-play-button,
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-mute-button,
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-volume-slider {
+    display: inline-block;
+    margin: 0;
+}
+
+.camelStoryDesign .storyPage-audio audio::-webkit-media-controls-mute-button {
+    display: inline-block;
+}
+
+.camelStoryDesign .storyPage-audio:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+#audio-element {
+    display: none;
+}
+
+/* Updated position for restart-audio-button */
+.camelStoryDesign .restart-audio-button {
+    position: absolute;
+    top: 300px;
+    /* Place it below the volume control */
+    right: 50px;
+    /* Align it with the volume control */
+    background-color: #ff8000;
+    color: white;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.camelStoryDesign .restart-audio-button:hover {
+    background-color: #4410df;
+    transform: scale(1.1);
+}
+
+/* Volume control container */
+.volume-control {
+    position: absolute;
+    top: 250px;
+    /* Position it above the restart button */
+    right: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 11;
+    /* Ensure it's on top of other elements */
+}
+
+/* Volume control styling */
+.volume-control {
+    display: flex;
+    align-items: center;
+}
+
+.volume-icon {
+    color: #ffcc00;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.volume-slider {
+    width: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    outline: none;
+}

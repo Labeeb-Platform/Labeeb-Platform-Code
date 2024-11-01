@@ -1,0 +1,36 @@
+/* src/components/PopupModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stars-container {
+    display: flex;
+    gap: 5px;
+    /* Adjust spacing between stars */
+    margin-top: 10px;
+}
+
+.star-image {
+    width: 24px;
+    /* Adjust star size */
+    height: 24px;
+}

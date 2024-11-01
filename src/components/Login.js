@@ -1,26 +1,40 @@
 // src/components/Login.js
 import React, { useState } from 'react';
+import { db } from '../firebase/firebaseConfig'; // Firebase imports
+import { doc, setDoc } from 'firebase/firestore';
 import './Login.css';
-import desert from '../assets/loginPage/desert.svg';
-import dunes from '../assets/loginPage/dunes.svg';
-import camel from '../assets/loginPage/camel.svg';
-
 
 const Login = ({ onLogin }) => {
   const [name, setName] = useState('');
   const [gender, setGender] = useState(null);
 
-  const handleLogin = () => {
+  // Generate a unique ID for each user
+  const generateUserId = () => `${name}-${Date.now()}`;
+
+  const handleLogin = async () => {
     if (name && gender) {
-      onLogin(name, gender);  // Proceed only if both name and gender are selected
+      const userId = generateUserId(); // Generate unique ID
+
+      // Store user data in Firestore under their unique ID
+      try {
+        await setDoc(doc(db, 'users', userId), {
+          name,
+          gender,
+          userId,
+          points: 0, // Initial points
+        });
+
+        // Pass user data back to App
+        onLogin(name, gender, userId); // Pass generated userId
+      } catch (error) {
+        console.error('Error saving user to Firestore:', error);
+      }
     } else {
-      alert("Please enter your name and select a character.");
+      alert('Please enter your name and select a character.');
     }
   };
 
   return (
-
-
     <div className="login-container">
       <div className="login-card">
         <h1>منصة لبيب التعليمية</h1>
@@ -32,14 +46,12 @@ const Login = ({ onLogin }) => {
         />
         <div className="gender-selection">
           <h3>اختر شخصيتك</h3>
-          
           <div className="gender-options">
             <div
               className={`gender-option ${gender === 'boy' ? 'selected' : ''}`}
               onClick={() => setGender('boy')}
             >
               <img src="/Images/boy-char-login.png" alt="Boy" />
-
               <p>فتى</p>
             </div>
             <div

@@ -14,6 +14,7 @@
 
 
     background:
+
             url('../assets/loginPage/star9.svg') 10% 5% no-repeat,
             url('../assets/loginPage/star9.svg') 20% 10% no-repeat,
             url('../assets/loginPage/star9.svg') 30% 15% no-repeat,
@@ -34,16 +35,73 @@
      
             url('../assets/loginPage/star9.svg') 70% 50% no-repeat,
             url('../assets/loginPage/star9.svg') 80% 55% no-repeat,
-            url('../assets/loginPage/star9.svg') 90% 60% no-repeat,
-            url('../assets/loginPage/star9.svg') 85% 65% no-repeat,
+            url('../assets/loginPage/star9.svg') 90% 40% no-repeat,
+            url('../assets/loginPage/star9.svg') 85% 30% no-repeat,
+
+
+            url('../assets/loginPage/star9.svg') 2% 10% no-repeat,
+                url('../assets/loginPage/star9.svg') 5% 20% no-repeat,
+                url('../assets/loginPage/star9.svg') 99% 5% no-repeat,
+                url('../assets/loginPage/star9.svg') 95% 20% no-repeat,
+
+
+
         
+                url('../assets/loginPage/grass2.svg') -3% 109% no-repeat,
+                url('../assets/loginPage/grass.svg') 1% 107% no-repeat,
+                url('../assets/loginPage/grass2.svg') 5% 109% no-repeat,
+                url('../assets/loginPage/grass.svg') 10% 107% no-repeat,
+                url('../assets/loginPage/grass2.svg') 15% 109% no-repeat,
+                url('../assets/loginPage/grass.svg') 20% 107% no-repeat,
+
+                    url('../assets/loginPage/grass2.svg') 25% 109% no-repeat,
+                        url('../assets/loginPage/grass2.svg') 30% 105% no-repeat,
+                        url('../assets/loginPage/grass.svg') 35% 107% no-repeat,
+                        url('../assets/loginPage/grass2.svg') 40% 107% no-repeat,
+                        url('../assets/loginPage/grass.svg') 45% 109% no-repeat,
+                        url('../assets/loginPage/grass2.svg') 50% 107% no-repeat,
+                        url('../assets/loginPage/grass.svg') 55% 109% no-repeat,
+
+                            url('../assets/loginPage/grass2.svg') 65% 105% no-repeat,
+                            url('../assets/loginPage/grass2.svg') 70% 109% no-repeat,
+                            url('../assets/loginPage/grass.svg') 75% 107% no-repeat,
+                            url('../assets/loginPage/grass2.svg') 80% 109% no-repeat,
+                            url('../assets/loginPage/grass.svg') 85% 107% no-repeat,
+
+                            url('../assets/loginPage/grass2.svg') 90% 105% no-repeat,
+                                url('../assets/loginPage/grass2.svg') 95% 109% no-repeat,
+                                url('../assets/loginPage/grass2.svg') 100% 105% no-repeat,
+                                url('../assets/loginPage/grass2.svg') 105% 109% no-repeat,
 
 
-    
-            url('../assets/loginPage/storyList\ \(4\).svg') 5% 105% no-repeat,
-            url('../assets/loginPage/camel4.svg') 35% 105% no-repeat,
-            url('../assets/loginPage/camel4.svg') 66% 105% no-repeat,
-            url('../assets/loginPage/camel4.svg') 95% 105% no-repeat,
+
+            url('../assets/loginPage/treegreen.svg') -30% 100% no-repeat,
+            url('../assets/loginPage/treepink.svg') -5% 98% no-repeat,
+            url('../assets/loginPage/treepurpule.svg') 3% 110% no-repeat,
+            url('../assets/loginPage/treeyelolw.svg') 3% 105% no-repeat,
+
+            
+
+
+
+
+            url('../assets/loginPage/bigtree\ \(1\).svg') 120% 105% no-repeat,
+            url('../assets/loginPage/storyList\ \(4\).svg') 95% 100% no-repeat,
+
+
+            url('../assets/loginPage/storyList\ \(5\).svg') 50% 74% no-repeat,
+            url('../assets/loginPage/storyList\ \(11\).svg') 50% 95% no-repeat,
+
+            url('../assets/loginPage/storyList\ \(12\).svg') 30% 100% no-repeat,
+
+             url('../assets/loginPage/boy-reading2.png') 61% 90% no-repeat,
+
+
+
+
+
+
+            url('../assets/loginPage/gras.svg') 50% 100% no-repeat,
 
             /*  
             faery 1
@@ -55,16 +113,42 @@
 
              */
     
-            url('../assets/loginPage/dunes.svg') -10% 900% no-repeat,
     
-            linear-gradient(to top, #fff1e6 , #f8a17d); 
+            linear-gradient(to top, #fff1e6 , #017e94); 
 
-        background-size: 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px,
-         300px,300px,300px, 300px, 650px, 650px, cover;
+        background-size: 10px,
+            10px,
+            10px,
+            10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px,
+        100px, 100px,100px,100px,100px, 100px, 100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+            100px,
+        600px,300px,300px, 400px, 
+        500px, 100px, 
+        70px, 200px, 
+        50px,
+        200px, 
+        1600px, cover;
         position: relative;
+        z-index: 1;
 
         
 }
+
+
 
 
 
@@ -98,7 +182,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:  #18927c9a;
+    background:  #015b6bdd;
     /* #3e2723 
     #FFCC80,FFAB91 */
     border-radius: 40px;
@@ -130,7 +214,8 @@
     border: none;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+    font-family: 'El Messiri', sans-serif;
     padding: 8px 12px;
     border-radius: 20px;
     cursor: pointer;
@@ -145,7 +230,8 @@
     border: none;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+        font-family: 'El Messiri', sans-serif;
     padding: 8px 12px;
     border-radius: 20px;
     cursor: pointer;
@@ -174,7 +260,8 @@
     justify-content: center;
     /* This will center the text in the available space */
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
+        font-family: 'El Messiri', sans-serif;
     color: #4E342E;
 }
 
@@ -190,12 +277,14 @@
 .total-points {
     font-size: 14px;
         color: rgb(255, 225, 0);
+    font-family: 'El Messiri', sans-serif;
 }
 
 .profile-username {
     font-size: 14px;
     color: white;
     font-weight: bold;
+        font-family: 'El Messiri', sans-serif;
     text-align: center;
     margin-right: 8px;
     /* Adds space between username and profile image */
@@ -218,7 +307,8 @@
 
 .button-text {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
+        font-family: 'El Messiri', sans-serif;
 }
 
 .ribbon-button:hover {
@@ -300,3 +390,4 @@
 .story-stars img:hover {
     transform: scale(1.1);
 }
+

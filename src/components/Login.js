@@ -37,6 +37,9 @@ const Login = ({ onLogin }) => {
 return (
   <div className="login-container">
     <div className="title-wrapper">
+
+      {/* <img src="/Images/labeebLogo.png" alt="Logo" className="logo-image" /> */}
+
       <h1 className="login-title">منصة لبيب التعليمية</h1>
     </div>
     <div className="login-card">

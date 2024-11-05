@@ -66,6 +66,10 @@ const StoryList = ({ userId, onLogout }) => {
   const [selectedStory, setSelectedStory] = useState(null);
   const [showSubmitForm, setShowSubmitForm] = useState(false);
   const [isSubmitPageOpen, setIsSubmitPageOpen] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [gender, setGender] = useState('');
+
+
   const [stories, setStories] = useState([
     { title: 'قصة النحلة النشيطة', image: '/Images/bee2.svg', folder: '/data/beeStory', design: 'beeStoryDesign', points: 0 },
     { title: 'قصة فارس والفضاء', image: '/Images/astronaut.svg', folder: '/data/spaceStory', design: 'spaceStoryDesign', points: 0 },
@@ -89,6 +93,18 @@ const StoryList = ({ userId, onLogout }) => {
 
   return () => unsubscribe(); // Cleanup listener on unmount
 }, [userId]); // Removed 'stories' dependency to avoid reinitializing on updates
+
+useEffect(() => {
+  const fetchUserData = async () => {
+    const userDoc = await getDoc(doc(db, 'users', userId));
+    if (userDoc.exists()) {
+      setUserName(userDoc.data().name || 'اسم المستخدم');
+      setGender(userDoc.data().gender || 'girl'); // Default to 'girl' if not set
+    }
+  };
+  fetchUserData();
+}, [userId]);
+
 
 
   const handleStoryClick = (story) => setSelectedStory(story);
@@ -118,8 +134,18 @@ const StoryList = ({ userId, onLogout }) => {
 
 
   return (
+
+    
     <div className="storylist-page">
       {/* Ribbon at the top with Logout and Submit Story */}
+
+      <div class="firefly-container">
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+</div>
+
+    
 
 
 
@@ -147,14 +173,23 @@ const StoryList = ({ userId, onLogout }) => {
         <div className="total-points">مجموع النجوم : {totalPoints} / 20</div>
 
       <div className="profile-circle">
-    <p className="profile-username">اسم المستخدم</p>
-    <img src="/Images/girl-char-login.png" alt="Profile" className="profile-image" />
-    </div>
+          <p className="profile-username">{userName}</p>
+
+        <img
+          src={gender === 'boy' ? "/Images/boy-char-login.png" : "/Images/girl-char-login.png"}
+          alt="Profile"
+          className="profile-image"
+        />   
+
+ </div>
   </div>
 </div>
 
 
 )}
+
+
+       
 
       <div className="storylist-container">
         {selectedStory ? (
@@ -183,7 +218,12 @@ const StoryList = ({ userId, onLogout }) => {
           </div>
         )}
       </div>
+
+
+ 
     </div>
+
+    
   );
 
 

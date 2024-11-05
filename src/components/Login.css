@@ -44,6 +44,8 @@ background:
 
     url('../assets/loginPage/desrt-login\ \(17\).svg') -15% 100% no-repeat,
 
+        url('../assets/loginPage/wavesand1.svg') 50% 105% no-repeat,
+
      /* camel 1,  
         house 4, 5 - 11 - 18 - 19,
         kid 9,
@@ -54,7 +56,8 @@ background:
     /* 017E94 */
     
     background-size:  300px, 140px,650px, 650px, 100px, 120px, 100px,
-        120px, 300px, 300px, 100px,  500px, cover;
+        120px, 300px, 300px, 100px,  500px, 2000px, 
+        cover;
     /* Set the sizes for the background layers */
     position: relative;
     z-index: 0;
@@ -107,6 +110,7 @@ background:
     width: 100%;
     height: 400px;
     background:
+
         url('../assets/loginPage/star13.svg') 1% 2% no-repeat,
         url('../assets/loginPage/star13.svg') 2% 30% no-repeat,
         url('../assets/loginPage/star13.svg') 3% 15% no-repeat,
@@ -152,6 +156,7 @@ background:
         url('../assets/loginPage/meteorite.svg') 95% 6% no-repeat,
 
         url('../assets/loginPage/earth.svg') -3% 17% no-repeat;
+        
 
         
     background-size: 10px, 8px, 8px, 10px, 8px, 10px, 8px, 8px, 10px, 8px,
@@ -192,6 +197,15 @@ background:
     text-align: center;
     width: 100%;
     margin-top: 50px;
+    gap: 10px;
+    flex-direction: row-reverse;
+        /* RTL alignment for Arabic */
+}
+
+.logo-image {
+    width: 90px;
+    /* Adjust the size as needed */
+    height: auto;
 }
 
 /* Styling for the title */

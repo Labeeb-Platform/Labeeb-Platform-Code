@@ -76,7 +76,7 @@
 // export default SubmitStoryPage;
 
 
-
+import './SubmitStoryPageDesign.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
@@ -109,13 +109,13 @@ const SubmitStoryPage = ({ userId, onBack }) => {
 
     try {
       // Send email using EmailJS
-      await emailjs.send(
-        'service_c4ba0yb',   // Replace with your Service ID from EmailJS
-        'template_nqmzhxr',   // Replace with your Template ID from EmailJS
-        dataToSend,
-        'S8INIcWZ_Kx9x8fgX'        // Replace with your EmailJS User ID
-      );
-      alert('Your story has been submitted via email! Now evaluating the story...');
+    //   await emailjs.send(
+    //     'service_c4ba0yb',   // Replace with your Service ID from EmailJS
+    //     'template_nqmzhxr',   // Replace with your Template ID from EmailJS
+    //     dataToSend,
+    //     'S8INIcWZ_Kx9x8fgX'        // Replace with your EmailJS User ID
+    //   );
+    //   alert('Your story has been submitted via email! Now evaluating the story...');
 
       // Start story evaluation with Allam
       await evaluateStory(formData.body);
@@ -125,102 +125,98 @@ const SubmitStoryPage = ({ userId, onBack }) => {
     }
   };
 
-//   const evaluateStory = async (storyText) => {
-//     setLoading(true);
-//     try {
-//       const response = await axios.post(
-//         'https://eu-de.ml.cloud.ibm.com/ml/v1/text/generation?version=2023-05-29', // Replace with the actual Allam endpoint
-//         {
-//           prompt: `
-//           المطلوب: أريدك أن تقوم بتقييم القصة بناءً على المعايير التالية، وتقديم درجات لكل معيار بالإضافة إلى تعليق مختصر يوضح السبب، وأيضًا احتساب المجموع النهائي.
 
-//           نص القصة: ${storyText}
 
-//           المعايير لتقييم القصة:
-//           1- هيكل النص: تقييم مدى وضوح البداية، الوسط، والنهاية، ومدى تسلسل الأحداث.
-//           2- الشخصيات: مدى بساطة الشخصيات وتوافقها مع البيئة الثقافية والدينية للأطفال.
-//           3- اللغة والأسلوب: بساطة الكلمات ومدى ملاءمتها للفئة العمرية.
-//           4- المحتوى والمغزى: وضوح المغزى الأخلاقي ومدى فهمه بسهولة.
-//           5- الخيال والواقعية: التوازن بين الخيال المعتدل والواقعية.
-//           6- الطول والانتباه: ملاءمة الطول للطفل وقدرته على المتابعة.
-//           7- القيم الثقافية والدينية: تعزيز القيم الإسلامية والعربية.
-//           8- قابلية الكلمات للتصور: إمكانية تخيل الكلمات والمواقف بسهولة.
-//           9- قصر الجمل وكثرة الأحداث: التركيز على الجمل القصيرة والأحداث المتتابعة.
-//           10- الملاءمة العاطفية: مناسبة المشاعر والأحداث لقدرة الطفل على الفهم.
-
-//           نموذج الرد المطلوب: كل معيار يحصل على درجة من 1 إلى 5، مع شرح مختصر، ثم جمع الدرجات لإعطاء المجموع النهائي.
-//           `,
-//         },
-//         {
-//           headers: {
-//             Authorization: `v-eUfsyk0RxN9bgBshUAp85W1yVv-XI-Tv_071k865RM`, // Replace with your Allam API key
-//           },
-//         }
-//       );
-
-//       // Capture the response for evaluation details
-//       setEvaluationResult(response.data);
-//     } catch (error) {
-//       console.error('Error evaluating story:', error);
-//       alert('Failed to evaluate your story. Please check your API connection.');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
 
 const evaluateStory = async (storyText) => {
-    setLoading(true);
-    try {
-      const response = await axios.post(
-        'http://localhost:5000/evaluate',
-        { storyText }
-      );
-      setEvaluationResult(response.data.evaluation);
-    } catch (error) {
-      console.error('Error evaluating story:', error);
-      alert('Failed to evaluate your story. Please check your API connection.');
-    } finally {
-      setLoading(false);
+  setLoading(true);
+  try {
+    const response = await axios.post(
+      'http://localhost:5000/evaluate', // Use your local proxy server
+      { storyText }
+    );
+
+    // Ensure response data structure is as expected
+    if (response.data.evaluation.length > 0) {
+      const resultText = response.data.evaluation;
+      console.log("response.data.evaluation: ", response.data.evaluation)
+
+      // Extract the specific portions from resultText
+      const summaryCommentMatch = resultText.match(/تعليق نهائي مختصر: (.*)/);
+      const suitabilityMatch = resultText.match(/هل القصة ملائمة للأطفال: (.*)/);
+
+      // Set extracted portions in the evaluation result without prefixes
+      setEvaluationResult({
+        finalComment: summaryCommentMatch ? summaryCommentMatch[1].trim() : "Not found",
+        isSuitable: suitabilityMatch ? suitabilityMatch[1].trim() : "Not found",
+      });
+    } else {
+      console.log("response.data.evaluation: ", response.data.evaluation);
+      throw new Error("Unexpected response structure or missing data");
     }
-  };
-  return (
-    <div className="submit-story-page">
-      <button onClick={onBack}>Back</button>
-      <h2>Submit Your Story</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title:
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Body:
-          <textarea
-            name="body"
-            value={formData.body}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Submitting and Evaluating...' : 'Submit'}
-        </button>
-      </form>
-      
-      {/* Display evaluation result */}
-      {evaluationResult && (
-        <div>
-          <h3>Evaluation Result:</h3>
-          <pre>{JSON.stringify(evaluationResult, null, 2)}</pre>
+  } catch (error) {
+    console.error('Error evaluating story:', error);
+    alert('Failed to evaluate your story. Please check your API connection.');
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+
+
+
+
+return (
+    <div className="submit-story-container">
+        <button onClick={onBack} className="form-back-button">
+    <img src="/Images/backButton.svg" alt="Back Icon" className="back-icon" />
+    <span>العودة</span></button>
+
+        <h1 className="creative-title">حان وقت الإبداع! اصنع قصتك</h1>
+        <div className="submit-story-box">
+            
+            <form onSubmit={handleSubmit}>
+                <label>
+                    عنوان القصة
+                    <input
+                        type="text"
+                        name="title"
+                        value={formData.title}
+                        onChange={handleChange}
+                        placeholder="اكتب العنوان هنا" /* Placeholder for the title */
+                        required
+                    />
+                </label>
+                <label>
+                    اكتب قصتك هنا
+                    <textarea
+                        name="body"
+                        value={formData.body}
+                        onChange={handleChange}
+                        placeholder="اكتب قصتك هنا" /* Placeholder for the story body */
+                        required
+                    />
+                </label>
+                <button type="submit" className="submit-button" disabled={loading}>
+                    {loading ? 'جارٍ الإرسال والتقييم...' : 'أرسل قصتك'}
+                </button>
+            </form>
+            {evaluationResult && (
+                <div className="evaluation-result">
+                    <h3>نتيجة تقييم القصة</h3>
+                    <p><strong>هل القصة مناسبة للاطفال ؟</strong> {evaluationResult.isSuitable}</p>
+                    <p><strong>تعليق لتحسين القصة : </strong> {evaluationResult.finalComment}</p>
+                </div>
+            )}
         </div>
-      )}
     </div>
-  );
+);
+
+
+
+
+
 };
 
 export default SubmitStoryPage;

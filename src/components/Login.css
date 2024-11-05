@@ -13,61 +13,200 @@
     cursor: default;
     user-select: none;
     outline: none;
+    padding-top: 20px;
     
 
 background: 
-    url('../assets/loginPage/star.svg') 80% 45% no-repeat,
-    url('../assets/loginPage/star.svg') 85% 10% no-repeat,
-    url('../assets/loginPage/star.svg') 90% 55% no-repeat,
-    url('../assets/loginPage/star.svg') 70% 18% no-repeat,
-    url('../assets/loginPage/star.svg') 95% 30% no-repeat,
-    url('../assets/loginPage/star.svg') 96% 8% no-repeat,
 
-    url('../assets/loginPage/star.svg') 30% 50% no-repeat,
-    url('../assets/loginPage/star.svg') 10% 40% no-repeat,
-    url('../assets/loginPage/star.svg') 25% 22% no-repeat,
-
-    url('../assets/loginPage/bird.svg') 20% 40% no-repeat,
-
-
-    url('../assets/loginPage/clouds.svg') 80% 25% no-repeat,
-    url('../assets/loginPage/cloud-computing.svg') 30% 20% no-repeat,
-
-    url('../assets/loginPage/sun.svg') 5% 10% no-repeat,
-
-    url('../assets/loginPage/cactus2.svg') 89% 102% no-repeat,
-    url('../assets/loginPage/cactus2.svg') 100% 102% no-repeat,
+    url('../assets/loginPage/desrt-login\ \(5\).svg') 100% 100% no-repeat,
     
     
-    url('../assets/loginPage/camel4.svg') 79% 101.5% no-repeat,
+    url('../assets/loginPage/desrt-login1.svg') 76% 101.5% no-repeat,
 
     url('../assets/loginPage/dunes.svg') 51% 1000% no-repeat,
     url('../assets/loginPage/dunes.svg') -10% 700% no-repeat,
 
-    linear-gradient(to top, #FFD194, #70e1f5);
+
+        url('../assets/loginPage/arab-boy.svg') 10% 102% no-repeat,
+        url('../assets/loginPage/arab-grand.svg') 15% 102% no-repeat,
+
+        url('../assets/loginPage/arab-child.svg') 60% 102% no-repeat,
+        url('../assets/loginPage/arab-man.svg') 63% 102% no-repeat,
+
+
+     url('../assets/loginPage/desrt-login\ \(18\).svg') 10% 110% no-repeat,
+    url('../assets/loginPage/desert-house.svg') 35% 108% no-repeat,
+
+    url('../assets/loginPage/water-well.svg') 55% 97% no-repeat,
+
+
+
+
+    url('../assets/loginPage/desrt-login\ \(17\).svg') -15% 100% no-repeat,
+
+     /* camel 1,  
+        house 4, 5 - 11 - 18 - 19,
+        kid 9,
+        tree 15 17,
+    */
+
+    linear-gradient(to top, #FFD194, #017e94);
+    /* 017E94 */
     
-    background-size:   10px, 10px, 10px, 10px,10px, 10px,
-        10px,
-        10px,
-        10px,
-        40px, 150px, 150px,150px,100px, 180px, 140px,650px, 650px, cover;
+    background-size:  300px, 140px,650px, 650px, 100px, 120px, 100px,
+        120px, 300px, 300px, 100px,  500px, cover;
     /* Set the sizes for the background layers */
     position: relative;
-    
+    z-index: 0;
+        /* Stack this behind .login-card */
+    pointer-events: none;
 }
 
 .login-card {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.888);
+    margin-top: 80px;
     border-radius: 20px;
     padding: 40px;
-    width: 600px;
+    width: 550px;
+    height: 500px;
     /* Increase the width for larger forms */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     /* Bigger shadow */
     text-align: center;
     overflow: hidden;
     cursor: default;
+    position: relative;
+    z-index: 1; 
+    pointer-events: auto;
 }
+
+
+
+
+/* SVG background */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23013e49' fill-opacity='1' d='M0,128L60,106.7C120,85,240,43,360,32C480,21,600,43,720,58.7C840,75,960,85,1080,74.7C1200,64,1320,32,1380,16L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
+    /* Ensure this is behind other elements */
+}
+
+/* Stars and rocket background */
+.login-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background:
+        url('../assets/loginPage/star13.svg') 1% 2% no-repeat,
+        url('../assets/loginPage/star13.svg') 2% 30% no-repeat,
+        url('../assets/loginPage/star13.svg') 3% 15% no-repeat,
+        url('../assets/loginPage/star13.svg') 6% 7% no-repeat,
+        url('../assets/loginPage/star13.svg') 7% 27% no-repeat,
+        url('../assets/loginPage/star13.svg') 9% 10% no-repeat,
+
+
+        url('../assets/loginPage/star13.svg') 10% 2% no-repeat,
+            url('../assets/loginPage/star13.svg') 15% 5% no-repeat,
+            url('../assets/loginPage/star13.svg') 20% 10% no-repeat,
+            url('../assets/loginPage/star13.svg') 25% 7% no-repeat,
+            url('../assets/loginPage/star13.svg') 30% 3% no-repeat,
+            url('../assets/loginPage/star13.svg') 35% 5% no-repeat,
+
+
+            url('../assets/loginPage/star13.svg') 40% 2% no-repeat,
+                url('../assets/loginPage/star13.svg') 45% 5% no-repeat,
+                url('../assets/loginPage/star13.svg') 50% 10% no-repeat,
+                url('../assets/loginPage/star13.svg') 55% 7% no-repeat,
+                url('../assets/loginPage/star13.svg') 60% 3% no-repeat,
+                url('../assets/loginPage/star13.svg') 65% 5% no-repeat,
+
+        
+            url('../assets/loginPage/star13.svg') 70% 10% no-repeat,
+                url('../assets/loginPage/star13.svg') 75% 20% no-repeat,
+                url('../assets/loginPage/star13.svg') 80% 19% no-repeat,
+                url('../assets/loginPage/star13.svg') 86% 20% no-repeat,
+                url('../assets/loginPage/star13.svg') 90% 10% no-repeat,
+                url('../assets/loginPage/star13.svg') 95% 15% no-repeat,
+
+        
+        url('../assets/loginPage/star13.svg') 70% 2% no-repeat,
+            url('../assets/loginPage/star13.svg') 75% 5% no-repeat,
+            url('../assets/loginPage/star13.svg') 80% 10% no-repeat,
+            url('../assets/loginPage/star13.svg') 86% 7% no-repeat,
+            url('../assets/loginPage/star13.svg') 90% 3% no-repeat,
+            url('../assets/loginPage/star13.svg') 95% 5% no-repeat,
+
+            url('../assets/loginPage/rocket11.svg') 5% 10% no-repeat,
+
+        url('../assets/loginPage/planet7.svg') 80% 5% no-repeat,
+        url('../assets/loginPage/meteorite.svg') 95% 6% no-repeat,
+
+        url('../assets/loginPage/earth.svg') -3% 17% no-repeat;
+
+        
+    background-size: 10px, 8px, 8px, 10px, 8px, 10px, 8px, 8px, 10px, 8px,
+        8px,
+        8px,
+        10px,
+        8px,
+        8px,
+        10px,
+        8px,
+        10px,
+        8px,
+        10px,
+        8px,
+        8px,
+        10px,
+        8px,
+        8px,
+        10px,
+        8px,
+        8px,
+        10px,
+        8px,50px, 33px, 40px, 90px, cover;
+}
+
+.login-container::before,
+.login-container::after {
+    z-index: -2;
+    pointer-events: none;
+
+}
+
+
+.title-wrapper {
+    position: absolute;
+    top: 20px;
+    /* Adjust to control title positioning over the card */
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* Styling for the title */
+.login-title {
+    font-size: 80px;
+    font-family: 'El Messiri', sans-serif;
+    color: #ffcc00;
+    margin: -30px;
+    
+    /* Remove default margin */
+}
+
+
+
+
 
 .login-card h1,
 .login-card p,
@@ -94,6 +233,7 @@ background:
     border-radius: 10px;
     border: 1px solid #ccc;
     cursor: text;
+    text-align: right;
 }
 
 .login-card button:hover {
@@ -161,7 +301,7 @@ background:
 }
 
 .login-card button {
-    margin-top: 30px;
+    margin-top: 5px;
     /* Larger margin at the top */
     padding: 15px 30px;
     background-color: #ffcc00;
@@ -196,6 +336,17 @@ background:
     }
 }
 
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+    }
+
+    .login-title {
+        font-size: 36px;
+    }
+}
 
 
 

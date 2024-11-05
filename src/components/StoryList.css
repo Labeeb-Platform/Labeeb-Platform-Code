@@ -14,47 +14,220 @@
 
 
     background:
-        url('../assets/loginPage/star4.svg') 10% 5% no-repeat,
-            url('../assets/loginPage/star4.svg') 20% 10% no-repeat,
-            url('../assets/loginPage/star4.svg') 30% 15% no-repeat,
-            url('../assets/loginPage/star4.svg') 40% 8% no-repeat,
-            url('../assets/loginPage/star4.svg') 50% 12% no-repeat,
-            url('../assets/loginPage/star4.svg') 60% 10% no-repeat,
-            url('../assets/loginPage/star4.svg') 70% 18% no-repeat,
-            url('../assets/loginPage/star4.svg') 80% 5% no-repeat,
-            url('../assets/loginPage/star4.svg') 90% 20% no-repeat,
-            url('../assets/loginPage/star4.svg') 85% 25% no-repeat,
-            url('../assets/loginPage/star4.svg') 75% 30% no-repeat,
-            url('../assets/loginPage/star4.svg') 65% 35% no-repeat,
-            url('../assets/loginPage/star4.svg') 55% 40% no-repeat,
-            url('../assets/loginPage/star4.svg') 45% 45% no-repeat,
-            url('../assets/loginPage/star4.svg') 35% 50% no-repeat,
-            url('../assets/loginPage/star4.svg') 25% 55% no-repeat,
+            url('../assets/loginPage/star9.svg') 10% 5% no-repeat,
+            url('../assets/loginPage/star9.svg') 20% 10% no-repeat,
+            url('../assets/loginPage/star9.svg') 30% 15% no-repeat,
+            url('../assets/loginPage/star9.svg') 40% 8% no-repeat,
+            url('../assets/loginPage/star9.svg') 50% 12% no-repeat,
+            url('../assets/loginPage/star9.svg') 60% 10% no-repeat,
+            url('../assets/loginPage/star9.svg') 70% 18% no-repeat,
+            url('../assets/loginPage/star9.svg') 80% 5% no-repeat,
+            url('../assets/loginPage/star9.svg') 90% 20% no-repeat,
+            url('../assets/loginPage/star9.svg') 85% 25% no-repeat,
+            url('../assets/loginPage/star9.svg') 75% 30% no-repeat,
+            url('../assets/loginPage/star9.svg') 65% 35% no-repeat,
+            url('../assets/loginPage/star9.svg') 55% 40% no-repeat,
+            url('../assets/loginPage/star9.svg') 45% 45% no-repeat,
+            url('../assets/loginPage/star9.svg') 35% 50% no-repeat,
+            url('../assets/loginPage/star9.svg') 25% 55% no-repeat,
   
      
-            url('../assets/loginPage/star4.svg') 70% 50% no-repeat,
-            url('../assets/loginPage/star4.svg') 80% 55% no-repeat,
-            url('../assets/loginPage/star4.svg') 90% 60% no-repeat,
-            url('../assets/loginPage/star4.svg') 85% 65% no-repeat,
+            url('../assets/loginPage/star9.svg') 70% 50% no-repeat,
+            url('../assets/loginPage/star9.svg') 80% 55% no-repeat,
+            url('../assets/loginPage/star9.svg') 90% 60% no-repeat,
+            url('../assets/loginPage/star9.svg') 85% 65% no-repeat,
         
 
 
-            url('../assets/loginPage/moon2.svg') 2% 5% no-repeat,
     
-            url('../assets/loginPage/camel4.svg') 5% 105% no-repeat,
+            url('../assets/loginPage/storyList\ \(4\).svg') 5% 105% no-repeat,
             url('../assets/loginPage/camel4.svg') 35% 105% no-repeat,
             url('../assets/loginPage/camel4.svg') 66% 105% no-repeat,
             url('../assets/loginPage/camel4.svg') 95% 105% no-repeat,
+
+            /*  
+            faery 1
+            sequarel 5 
+            tree  4, 6, 7, 8 , 9
+            wood 11
+            masroom 12 , 13
+
+
+             */
     
             url('../assets/loginPage/dunes.svg') -10% 900% no-repeat,
     
             linear-gradient(to top, #fff1e6 , #f8a17d); 
-    
+
         background-size: 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px, 10px,
-        100px, 300px,300px,300px, 300px, 650px, 650px, cover;
+         300px,300px,300px, 300px, 650px, 650px, cover;
         position: relative;
+
+        
 }
 
+
+
+/*
+/* .storylist-container::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    /* Vertical position */
+    /*left: 1px; */
+    /* Horizontal position */
+/* width: 100%; */
+    /* Adjust width as needed */
+    /*height: 350px; */
+    /* Set the SVG height */
+    /*background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%233e2723" fill-opacity="0.58" d="M0,32L0,288L60,288L60,32L120,32L120,96L180,96L180,224L240,224L240,160L300,160L300,96L360,96L360,192L420,192L420,32L480,32L480,128L540,128L540,224L600,224L600,64L660,64L660,64L720,64L720,64L780,64L780,192L840,192L840,64L900,64L900,288L960,288L960,192L1020,192L1020,96L1080,96L1080,256L1140,256L1140,96L1200,96L1200,192L1260,192L1260,224L1320,224L1320,128L1380,128L1380,96L1440,96L1440,0L1380,0L1380,0L1320,0L1320,0L1260,0L1260,0L1200,0L1200,0L1140,0L1140,0L1080,0L1080,0L1020,0L1020,0L960,0L960,0L900,0L900,0L840,0L840,0L780,0L780,0L720,0L720,0L660,0L660,0L600,0L600,0L540,0L540,0L480,0L480,0L420,0L420,0L360,0L360,0L300,0L300,0L240,0L240,0L180,0L180,0L120,0L120,0L60,0L60,0L0,0L0,0Z"/></svg>'); */
+    /*background-repeat: no-repeat; */
+/* background-size: contain; */
+    /* Or cover, as preferred */
+/*  pointer-events: none; */
+    /* Prevent interaction */
+    /*z-index: 1; */
+    /* Ensure it’s behind other content if needed */
+/*} 
+
+*/ 
+
+
+/* Kid-friendly style for the top ribbon */
+.top-ribbon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:  #18927c9a;
+    /* #3e2723 
+    #FFCC80,FFAB91 */
+    border-radius: 40px;
+    padding: 15px 20px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1300px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Left, center, and right section adjustments */
+.ribbon-left,
+.ribbon-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Style for buttons and icons */
+.ribbon-button {
+    display: flex;
+    align-items: center;
+    background: #8573d3b9;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.ribbon-button-logout{
+    display: flex;
+    align-items: center;
+    background: #f54100b9;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.ribbon-left {
+    margin-right: auto;
+}
+
+.ribbon-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    /* Adjust spacing as needed */
+}
+
+.ribbon-center {
+    flex: 2;
+    /* Give the center more space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This will center the text in the available space */
+    font-weight: bold;
+    font-size: 18px;
+    color: #4E342E;
+}
+
+
+
+.profile-circle {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    
+}
+
+.total-points {
+    font-size: 14px;
+        color: rgb(255, 225, 0);
+}
+
+.profile-username {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 8px;
+    /* Adds space between username and profile image */
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+
+.button-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.button-text {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.ribbon-button:hover {
+    background-color: #FFC107;
+}
+
+.ribbon-button:active {
+    transform: scale(1);
+}
 /* Container for the story boxes */
 .storyList-boxes {
     display: flex;
@@ -63,7 +236,7 @@
     width: 90%;
     margin: 0;
     /* Ensure no margin is adding space */
-    padding-top: 80px;
+    padding-top: 90px;
     /* Small padding to adjust the top position */
 }
 
@@ -104,4 +277,26 @@
     /* Friendly font */
     color: #333;
     margin: 0;
+}
+
+
+/* Star container */
+.story-stars {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+/* Individual star images */
+.story-stars img {
+    width: 24px;
+    /* Adjust the size for your design */
+    height: 24px;
+    margin-right: 4px;
+    transition: transform 0.2s;
+}
+
+/* Adding a slight zoom effect on hover */
+.story-stars img:hover {
+    transform: scale(1.1);
 }

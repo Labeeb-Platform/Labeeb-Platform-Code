@@ -94,16 +94,12 @@ function App() {
 
   return (
     <div className="App">
-      {loggedIn && (
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
-      )}
+     
       {currentPage === 'login' && (
         <Login onLogin={(name, gender, userId) => handleLogin(name, gender, userId)} />
       )}
       {currentPage === 'storyList' && (
-        <StoryList userId={userId} onSelectStory={handleSelectStory} />
+        <StoryList userId={userId} onSelectStory={handleSelectStory} onLogout={handleLogout} />
       )}
       {currentPage === 'storyPage' && (
         <StoryPage

@@ -106,8 +106,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 
-app.use(cors()); // Enable CORS for all routes
+// Enable CORS for all routes, allowing requests from http://localhost:3000
+app.use(cors({
+  origin: 'http://localhost:3000'  // Replace with your frontend URL
+}));
 app.use(express.json());
+
+
 
 // Endpoint to evaluate story
 app.post('/evaluate', async (req, res) => {

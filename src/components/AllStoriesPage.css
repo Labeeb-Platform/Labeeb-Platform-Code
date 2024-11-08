@@ -1,0 +1,117 @@
+.all-stories-page {
+    position: relative;
+    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Centered image as a background */
+    background-image: url('../assets/loginPage/children-reading.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Makes the image fit within the container while preserving aspect ratio */
+    background-position: center;
+}
+
+/* Adjustments for story list and buttons */
+.story-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.story-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-button:hover {
+    background-color: #45a049;
+}
+
+.story-description-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 95%;
+    height: 70%;
+    text-align: center;
+}
+
+
+
+.all-stories-back-button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'El Messiri', sans-serif;
+    /* Adjusted font size */
+    color: #cc2f2fc4;
+    /* White text */
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: color 0.2s ease;
+}
+.all-stories-back-button img.back-icon {
+    width: 50px;
+    /* Adjust icon size */
+    height: 50px;
+    margin-right: 8px;
+    /* Space between icon and text */
+}
+.all-stories-back-button:hover {
+animation: wiggle 0.4s ease-in-out;
+    /* Applies the wiggle effect on hover */
+    color: #790000;
+    /* Optional: Gold color on hover */}
+
+.story-description-box ul {
+    text-align: right;
+    padding-right: 20px;
+    list-style-type: disc;
+    list-style-position: inside;
+    /* Ensures bullet points stay inside the container */
+    direction: rtl;
+    /* Right-to-left alignment for Arabic */
+}
+
+.story-description-box li {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #333;
+    text-align: right;
+}
+
+.story-button.active {
+    background-color: #006605;
+    /* Highlighted background color */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

@@ -108,7 +108,12 @@ body {
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
+    background-color: #ffffff;
     width: 100%;
+
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
 }
 
 
@@ -122,7 +127,7 @@ body {
 .beeStoryDesign .back-button {
     background-color: transparent;
     /* Remove background color */
-    color: white;
+    color: rgb(156, 2, 2);
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -137,8 +142,10 @@ body {
 }
 
 .beeStoryDesign .back-button:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+    animation: wiggle 0.4s ease-in-out;
+        /* Applies the wiggle effect on hover */
+        color: #FFD700;
+        /* Optional: Gold color on hover */
 }
 
 .beeStoryDesign .back-button-image {
@@ -150,7 +157,7 @@ body {
 }
 
 .beeStoryDesign .back-button span {
-    color: #ff9d00;
+    color: #842100;
     /* Customize the text color */
     font-size: 16px;
 }

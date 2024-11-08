@@ -1,13 +1,28 @@
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Modal from 'react-modal';
-import './PopupModalDesign.css'; // Optional: Add custom styles for the modal
-import starFullImage  from '../assets/loginPage/StoryStarFull.svg'; // Update this path to where you store the image
+import './PopupModalDesign.css';
+import starFullImage from '../assets/loginPage/StoryStarFull.svg';
 import starEmptyImage from '../assets/loginPage/StoryStarEmpty.svg';
 
-Modal.setAppElement('#root'); // Bind modal to your root element
+
+
+Modal.setAppElement('#root');
 
 const PopupModal = ({ isOpen, onClose, pathsTaken, onRestart, storyPoints, onNavigateBack }) => {
+  const hasPlayedSound = useRef(false);
+
+  useEffect(() => {
+    if (isOpen && !hasPlayedSound.current) {
+      const audio = new Audio("/audioAffects/starSoundAffect.mp3");
+      audio.play();
+      hasPlayedSound.current = true; // Set flag so the sound only plays once per open
+    }
+    // Reset the flag when the modal closes
+    if (!isOpen) {
+      hasPlayedSound.current = false;
+    }
+  }, [isOpen]);
+
   return (
     <Modal
       isOpen={isOpen}
@@ -15,19 +30,20 @@ const PopupModal = ({ isOpen, onClose, pathsTaken, onRestart, storyPoints, onNav
       contentLabel="Stars Earned"
       className="modal-content"
       overlayClassName="modal-overlay"
-      shouldCloseOnOverlayClick={false}  // Disable closing on overlay click
-
+      shouldCloseOnOverlayClick={false}
     >
-      <h2>أحسنت! لقد أكملت القصة!</h2>
-      <p>المسارات التي اخترتها:</p>
-      <ul>
-        {pathsTaken.map((path, index) => (
-          <li key={index}>مسار {path}</li>
-        ))}
-      </ul>
-      <p>⭐ عدد النجوم المكتسبة: {storyPoints}</p> {/* Display total points */}
+      <h2>
+        {storyPoints === 4
+          ? "انت بطل القصة! أكملت كل النجوم"
+          : storyPoints === 3
+          ? "رائع! حصلت على 3 نجوم!"
+          : storyPoints === 2
+          ? "جيد! حصلت على نجمتين"
+          : storyPoints === 1
+          ? "أحسنت! حصلت على نجمة"
+          : "جرب خيارات مختلفة في القصة لتحصل على النجوم"}
+      </h2>
 
-      {/* Stars Display */}
       <div className="stars-container">
         {Array.from({ length: 4 }).map((_, index) => (
           <img
@@ -39,12 +55,17 @@ const PopupModal = ({ isOpen, onClose, pathsTaken, onRestart, storyPoints, onNav
         ))}
       </div>
 
-      <button onClick={onRestart}>إعادة القصة واختيار مسارات جديدة</button>
-      <button onClick={onNavigateBack}>العودة إلى قائمة القصص</button> {/* New Button */}
+      {storyPoints < 4 && (
+        <button className="modal-button restart-button" onClick={onRestart}>
+          أعد القصة وجمع المزيد من النجوم
+        </button>
+      )}
 
+      <button className="modal-button back-button" onClick={onNavigateBack}>
+        العودة إلى قائمة القصص
+      </button>
     </Modal>
   );
 };
-
 
 export default PopupModal;

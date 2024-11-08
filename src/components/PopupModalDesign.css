@@ -1,36 +1,98 @@
-/* src/components/PopupModal.css */
-
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Softer overlay for kids */
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #fffbea;
+    /* Soft yellow background */
+    padding: 30px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 350px;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
 }
 
 .stars-container {
     display: flex;
-    gap: 5px;
-    /* Adjust spacing between stars */
-    margin-top: 10px;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
 }
 
 .star-image {
-    width: 24px;
-    /* Adjust star size */
-    height: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+/* Header text */
+.modal-content h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Paths and Points Text */
+.modal-content p,
+.modal-content ul {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.modal-button {
+    background-color: #ffd54f;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: inline-block;
+    width: 80%;
+    max-width: 200px;
+}
+
+/* Different color for each button */
+.restart-button {
+    background-color: #428e00d8;
+    /* Soft yellow */
+}
+
+.back-button {
+    background-color: #b64900b4;
+    /* Light blue */
+}
+
+.modal-button:hover {
+    background-color: #428e00;
+    /* Slightly darker yellow for restart button */
+}
+
+.back-button:hover {
+    background-color: #b64900;
+    /* Darker blue for back button */
+}
+
+.modal-button:active {
+    transform: scale(0.98);
+    /* Small scale effect when clicked */
 }

@@ -231,6 +231,7 @@ const StoryPage = ({ storyFolder, designClass,userId, storyId ,  onBack}) => {
   const [pathsTaken, setPathsTaken] = useState([]);
   const [storyPoints, setStoryPoints] = useState(0);
   const audioRef = useRef(null);
+  
 
 
   console.log("storyFolder: ", storyFolder)
@@ -420,9 +421,10 @@ const getStoryByIndex = (index) => {
       <div className={`storyPage-box ${designClass}`}>
         <div className="content-box">
           <div className="storyPage-content">
+            
             <button className="back-button" onClick={onBack}>
-              <img src="/Images/book.svg" alt="Back" className="back-button-image" />
-              <span>الرجوع الى القصص</span>
+              <img src="/Images/backarrow.svg" alt="Back" className="back-button-image" />
+              <span>العودة</span>
             </button>
             <img
               src={`${storyFolder}/images/${currentStory.image}`}

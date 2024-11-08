@@ -100,20 +100,12 @@ body {
 
 
 
-.camelStoryDesign .storyPage-text {
-    color: #000000;
-    font-family: 'El Messiri', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 100%;
-}
 
 
 .camelStoryDesign .storyPage-text {
     color: #000000;
     font-family: 'El Messiri', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
     width: 100%;

@@ -319,6 +319,31 @@
     transform: scale(1);
 }
 /* Container for the story boxes */
+
+
+
+/* src/components/StoryList.css */
+
+.all-stories-button {
+    position: absolute;
+    top: 27px;
+    right: 8px;
+    background-color: #002061;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.all-stories-button:hover {
+    background-color: #FFC107;
+}
+
+
 .storyList-boxes {
     display: flex;
     justify-content: space-around;

@@ -169,8 +169,9 @@ const evaluateStory = async (storyText) => {
 
 return (
     <div className="submit-story-container">
+      
         <button onClick={onBack} className="form-back-button">
-    <img src="/Images/backButton.svg" alt="Back Icon" className="back-icon" />
+    <img src="/Images/backarrow.svg" alt="Back Icon" className="back-icon" />
     <span>العودة</span></button>
 
         <h1 className="creative-title">حان وقت الإبداع! اصنع قصتك</h1>
@@ -202,13 +203,27 @@ return (
                     {loading ? 'جارٍ الإرسال والتقييم...' : 'أرسل قصتك'}
                 </button>
             </form>
-            {evaluationResult && (
+            {/* {evaluationResult && (
                 <div className="evaluation-result">
                     <h3>نتيجة تقييم القصة</h3>
                     <p><strong>هل القصة مناسبة للاطفال ؟</strong> {evaluationResult.isSuitable}</p>
                     <p><strong>تعليق لتحسين القصة : </strong> {evaluationResult.finalComment}</p>
                 </div>
+            )} */}
+
+            {evaluationResult && (
+  <div className={`popup ${evaluationResult.isSuitable === "نعم" ? 'popup-success' : 'popup-error'}`}>
+    {evaluationResult.isSuitable === "نعم" ? "تم تقديم القصة بنجاح، وهي مناسبة للأطفال!" : "عذرًا، القصة غير مناسبة للأطفال."}
+  </div>
+)}
+
+ {evaluationResult && (
+                <div className="evaluation-result">
+                    <p><strong>تعليق لتحسين القصة : </strong> {evaluationResult.finalComment}</p>
+                </div>
             )}
+
+            
         </div>
     </div>
 );

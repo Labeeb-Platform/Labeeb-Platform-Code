@@ -60,6 +60,7 @@ import starFullImage from '../assets/loginPage/StoryStarFull.svg';
 import starEmptyImage from '../assets/loginPage/StoryStarEmpty.svg';
 import { collection, onSnapshot } from "firebase/firestore";
 import { db, doc, getDoc, setDoc, updateDoc, arrayUnion } from '../firebase/firebaseConfig';
+import AllStoriesPage from './AllStoriesPage'; // Import the new page component
 
 
 const StoryList = ({ userId, onLogout }) => {
@@ -68,6 +69,11 @@ const StoryList = ({ userId, onLogout }) => {
   const [isSubmitPageOpen, setIsSubmitPageOpen] = useState(false);
   const [userName, setUserName] = useState('');
   const [gender, setGender] = useState('');
+
+   const [isAllStoriesOpen, setIsAllStoriesOpen] = useState(false); // Track page state
+
+  const openAllStoriesPage = () => setIsAllStoriesOpen(true);
+  const closeAllStoriesPage = () => setIsAllStoriesOpen(false);
 
 
   const [stories, setStories] = useState([
@@ -109,6 +115,10 @@ useEffect(() => {
 
   const handleStoryClick = (story) => setSelectedStory(story);
 
+    if (isAllStoriesOpen) {
+    return <AllStoriesPage onBack={closeAllStoriesPage} />; // Show all stories page if open
+  }
+
   const renderStars = (points) => {
     const maxStars = 4;
     return (
@@ -139,11 +149,11 @@ useEffect(() => {
     <div className="storylist-page">
       {/* Ribbon at the top with Logout and Submit Story */}
 
-      <div class="firefly-container">
+      {/* <div class="firefly-container">
     <div class="firefly"></div>
     <div class="firefly"></div>
     <div class="firefly"></div>
-</div>
+</div> */}
 
     
 
@@ -189,9 +199,17 @@ useEffect(() => {
 )}
 
 
+
+
        
 
       <div className="storylist-container">
+
+        <button onClick={openAllStoriesPage} className="all-stories-button">
+        قائمة القصص
+      </button>
+
+      
         {selectedStory ? (
           <StoryPage
             storyFolder={selectedStory.folder}

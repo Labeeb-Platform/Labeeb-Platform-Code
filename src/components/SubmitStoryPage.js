@@ -109,13 +109,13 @@ const SubmitStoryPage = ({ userId, onBack }) => {
 
     try {
       // Send email using EmailJS
-    //   await emailjs.send(
-    //     'service_c4ba0yb',   // Replace with your Service ID from EmailJS
-    //     'template_nqmzhxr',   // Replace with your Template ID from EmailJS
-    //     dataToSend,
-    //     'S8INIcWZ_Kx9x8fgX'        // Replace with your EmailJS User ID
-    //   );
-    //   alert('Your story has been submitted via email! Now evaluating the story...');
+      await emailjs.send(
+        'service_c4ba0yb',   // Replace with your Service ID from EmailJS
+        'template_nqmzhxr',   // Replace with your Template ID from EmailJS
+        dataToSend,
+        'S8INIcWZ_Kx9x8fgX'        // Replace with your EmailJS User ID
+      );
+      alert('تم إرسال قصتك بنجاح عبر البريد الإلكتروني! جاري الآن تقييم القصة، ترقب النتائج قريباً... 😊📖');
 
       // Start story evaluation with Allam
       await evaluateStory(formData.body);
@@ -143,7 +143,7 @@ const evaluateStory = async (storyText) => {
 
       // Extract the specific portions from resultText
       const summaryCommentMatch = resultText.match(/تعليق نهائي مختصر: (.*)/);
-      const suitabilityMatch = resultText.match(/هل القصة ملائمة للأطفال: (.*)/);
+      const suitabilityMatch = resultText.match(/ملاءمة القصة للأطفال: (.*)/);
 
       // Set extracted portions in the evaluation result without prefixes
       setEvaluationResult({

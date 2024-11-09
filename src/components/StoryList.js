@@ -186,7 +186,7 @@ useEffect(() => {
           <p className="profile-username">{userName}</p>
 
         <img
-          src={gender === 'boy' ? "/Images/boy-char-login.png" : "/Images/girl-char-login.png"}
+          src={gender === 'boy' ? "/Images/loginBoy.png" : "/Images/loginGirl.png"}
           alt="Profile"
           className="profile-image"
         />   

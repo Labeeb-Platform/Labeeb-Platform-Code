@@ -133,8 +133,8 @@ body {
 }
 
 .greenEarthStoryDesign .back-button:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+animation: wiggle 0.4s ease-in-out;
+    color: #FFD700;
 }
 
 .greenEarthStoryDesign .back-button-image {
@@ -146,9 +146,10 @@ body {
 }
 
 .greenEarthStoryDesign .back-button span {
-    color: #ff9d00;
-    /* Customize the text color */
+    color: rgb(156, 2, 2);
+        /* Customize the text color */
     font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .greenEarthStoryDesign .next-button {
@@ -334,6 +335,7 @@ body {
     color: #ffcc00;
     cursor: pointer;
     font-size: 24px;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .volume-slider {

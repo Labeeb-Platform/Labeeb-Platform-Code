@@ -1,0 +1,66 @@
+/* quizPopUpModel.css */
+
+.quiz-modal-overlay {
+position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Softer overlay for kids */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz-modal-content {
+    background-color: #fffbea;
+        /* Soft yellow background */
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        width: 90%;
+        max-width: 350px;
+        font-family: 'El Messiri', sans-serif;
+        color: #333;
+        /* Darker color for text */
+}
+
+/* Button styling */
+.quiz-choice-button {
+    background-color: #ffd54f;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: inline-block;
+    width: 80%;
+    max-width: 200px;
+}
+
+.quiz-close-button{
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: 'El Messiri', sans-serif;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        display: inline-block;
+        width: 80%;
+        max-width: 200px;
+            background-color: #b64900b4;
+}

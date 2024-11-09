@@ -141,8 +141,8 @@ body {
 }
 
 .camelStoryDesign .back-button:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+animation: wiggle 0.4s ease-in-out;
+    color: #FFD700;
 }
 
 .camelStoryDesign .back-button-image {
@@ -154,9 +154,10 @@ body {
 }
 
 .camelStoryDesign .back-button span {
-    color: #ff9d00;
-    /* Customize the text color */
+    color: rgb(156, 2, 2);
+        /* Customize the text color */
     font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .camelStoryDesign .next-button {
@@ -342,6 +343,7 @@ body {
     color: #ffcc00;
     cursor: pointer;
     font-size: 24px;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .volume-slider {

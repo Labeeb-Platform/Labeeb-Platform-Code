@@ -248,6 +248,7 @@ background:
     border: 1px solid #ccc;
     cursor: text;
     text-align: right;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .login-card button:hover {
@@ -382,6 +383,29 @@ background:
     color: #333;
     margin-top: 10px;
     text-align: left;
+    font-family: 'El Messiri', sans-serif;
+}
+
+
+.powered-by {
+    position: fixed;
+    bottom: 10px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+    display: flex;
+    align-items: center;
+    font-family: 'El Messiri', sans-serif;
+    font-size: 18px;
+    color: #4d4d4d;
+    /* Adjust color as needed */
+}
+
+.powered-by .logo {
+    width: 95px;
+    /* Adjust size as needed */
+    margin-left: 10px;
+    /* Space between text and logo */
 }
 
 /* Responsive adjustments for mobile */
@@ -394,6 +418,7 @@ background:
 
     .login-card h1 {
         font-size: 36px;
+        
     }
 
     .login-card input {

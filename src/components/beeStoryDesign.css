@@ -160,6 +160,7 @@ body {
     color: #842100;
     /* Customize the text color */
     font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .beeStoryDesign .next-button {
@@ -345,6 +346,7 @@ body {
     color: #ffcc00;
     cursor: pointer;
     font-size: 24px;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .volume-slider {

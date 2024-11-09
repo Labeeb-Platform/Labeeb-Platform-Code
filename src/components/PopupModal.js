@@ -8,7 +8,7 @@ import starEmptyImage from '../assets/loginPage/StoryStarEmpty.svg';
 
 Modal.setAppElement('#root');
 
-const PopupModal = ({ isOpen, onClose, pathsTaken, onRestart, storyPoints, onNavigateBack }) => {
+const PopupModal = ({ isOpen, onClose, pathsTaken, onRestart, storyPoints, onNavigateBack, onQuizStart }) => {
   const hasPlayedSound = useRef(false);
 
   useEffect(() => {
@@ -55,11 +55,23 @@ const PopupModal = ({ isOpen, onClose, pathsTaken, onRestart, storyPoints, onNav
         ))}
       </div>
 
-      {storyPoints < 4 && (
-        <button className="modal-button restart-button" onClick={onRestart}>
-          أعد القصة وجمع المزيد من النجوم
-        </button>
-      )}
+     
+
+      {storyPoints === 4 ? (
+  <button className="modal-button quiz-button"  onClick={() => {
+    console.log('Quiz button clicked');
+    onQuizStart(); // Ensure this triggers correctly
+  }}>
+    ابدأ التقييم
+  </button>
+) : (
+  <button className="modal-button restart-button" onClick={onRestart}>
+    أعد القصة وجمع المزيد من النجوم
+  </button>
+)}
+
+
+
 
       <button className="modal-button back-button" onClick={onNavigateBack}>
         العودة إلى قائمة القصص

@@ -93,6 +93,14 @@ const Login = ({ onLogin }) => {
         </div>
         <p className="parent-text">تسجيل الاهل و المدرسة</p>
       </div>
+
+      <div class="powered-by">
+    <img src="/Images/allam-logo.webp" alt="ALLAM Logo" class="logo"/>
+    <span>مدعوم بواسطة</span>
+        </div>
+
+
+      
     </div>
   );
 

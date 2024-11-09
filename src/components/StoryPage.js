@@ -1,226 +1,10 @@
-// import React, { useState, useEffect } from 'react';
-// import { readCSVFile } from './csvUtils'; // Import your CSV utility
-// import './StoryPage.css'; // General styles for all stories
-// import { FaVolumeUp } from 'react-icons/fa'; // Import a volume icon from react-icons
-// import PopupModal from './PopupModal'; 
-
-// const StoryPage = ({ storyFolder, designClass, onBack }) => {
-//   const [storyData, setStoryData] = useState([]);
-//   const [currentStepIndex, setCurrentStepIndex] = useState(0); // Start with index 0
-//   const [isStoryEnded, setIsStoryEnded] = useState(false); // Track if the story has ended
-//   const [volume, setVolume] = useState(1); // Default volume (1 is 100%)
-  
-//    const [pathsTaken, setPathsTaken] = useState([]);
-//    const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   useEffect(() => {
-//     // Fetch the CSV file from the selected story's folder
-//     fetch(`${storyFolder}/story.csv`)
-//       .then((response) => response.text()) // Read the CSV file as text
-//       .then((csvText) => {
-//         const blob = new Blob([csvText], { type: 'text/csv' });
-//         readCSVFile(blob, (data) => setStoryData(data)); // Parse and set the story data
-//       });
-//   }, [storyFolder]); // Reload when the storyFolder changes
-
-//   useEffect(() => {
-//     // Dynamically load the specific CSS for the story
-//     if (designClass === 'beeStoryDesign') {
-//       import('./beeStoryDesign.css');
-//     } else if (designClass === 'spaceStoryDesign') {
-//       import('./spaceStoryDesign.css');
-//     } else if (designClass === 'camelStoryDesign') {
-//       import('./camelStoryDesign.css');
-//     }else if (designClass === 'greenEarthStoryDesign') {
-//       import('./greenEarthStoryDesign.css');
-//     }else if (designClass === 'taifTripStoryDesign') {
-//       import('./taifTripStoryDesign.css');
-//     }
-//   }, [designClass]);
-
-//   // Function to get the story row by its index value
-//   const getStoryByIndex = (index) => {
-//     return storyData.find(story => parseInt(story.index) === index);
-//   };
-
-//   const currentStory = getStoryByIndex(currentStepIndex);
-
-//   const handleNext = () => {
-//     if (!isStoryEnded) {
-//       const nextStory = getStoryByIndex(currentStepIndex + 1); // Go to the next row (index + 1)
-//       if (nextStory) {
-//         setCurrentStepIndex(currentStepIndex + 1);
-//         if (nextStory.end === 'yes') {
-//           setIsStoryEnded(true); // Stop the story if it reaches an end
-//           setIsModalOpen(true);
-
-//         }
-//       }
-//     }
-//   };
-
-//   const handleBackStep = () => {
-//     if (currentStepIndex > 0) {
-//       setCurrentStepIndex(currentStepIndex - 1); // Go back to the previous row (index - 1)
-//     }
-//   };
-
-//   const handleChoice = (nextIndex) => {
-//     if (nextIndex === 'end') {
-//       setIsStoryEnded(true); // If 'end' is selected, stop the story
-//     } else {
-//       const nextStory = getStoryByIndex(parseInt(nextIndex, 10)); // Convert nextIndex to a number and find the corresponding row
-//       if (nextStory) {
-//         setCurrentStepIndex(parseInt(nextIndex, 10)); // Navigate to the chosen step by its index
-//         if (nextStory.end === 'yes') {
-//           setIsStoryEnded(true); // Stop the story if it reaches an end
-//           setIsModalOpen(true);
-//         }
-//       } else {
-//         console.error("Invalid option selected:", nextIndex);
-//       }
-//     }
-//   };
-
-//   if (!storyData.length || !currentStory) return <p>Loading story...</p>;
-
-//   const handleRestartAudio = () => {
-//     const audioElement = document.getElementById('audio-element');
-//     if (audioElement) {
-//         audioElement.currentTime = 0; // Reset audio to the beginning
-//         audioElement.play(); // Play the audio from the start
-//     }
-//   };
-
-//   const handleRestartStory = () => {
-//     setCurrentStepIndex(0);
-//     setPathsTaken([]);
-//     setIsStoryEnded(false);
-//     setIsModalOpen(false);
-//   };
-
-//   const handleVolumeChange = (event) => {
-//     const audioElement = document.getElementById('audio-element');
-//     const volumeValue = event.target.value;
-//     setVolume(volumeValue);
-//     if (audioElement) {
-//       audioElement.volume = volumeValue; // Adjust the audio element's volume
-//     }
-//   };
-
-//   return (
-//     <div className="storyPage-container">
-//       <div className={`storyPage-box ${designClass}`}>
-//         <div className="content-box">
-//           <div className="storyPage-content">
-
-//             {/* Back Button */}
-//             <button className="back-button" onClick={onBack}>
-//               <img src="/Images/book.svg" alt="Back" className="back-button-image" />
-//               <span>الرجوع الى القصص</span>
-//             </button>
-
-//             {/* Large Picture */}
-//             <img
-//               src={`${storyFolder}/images/${currentStory.image}`}
-//               alt="story image"
-//               className="storyPage-image"
-//             />
-
-//             {/* Story Text */}
-//             <p className="storyPage-text">{currentStory.text}</p>
-
-//             {/* Audio Player */}
-//             {currentStory.sound && (
-//               <div className="audio-container">
-//                 <audio id="audio-element"
-//                   key={currentStory.sound}
-//                   controls
-//                   autoPlay
-//                   className="storyPage-audio"
-//                 >
-//                   <source
-//                     src={`${storyFolder}/audio/${currentStory.sound}`}
-//                     type="audio/mp3"
-//                   />
-//                   Your browser does not support the audio element.
-//                 </audio>
-
-//                 {/* Volume Icon and Slider */}
-//                 <div className="volume-control">
-//                   <FaVolumeUp size={24} className="volume-icon" />
-//                   <input
-//                     type="range"
-//                     min="0"
-//                     max="1"
-//                     step="0.01"
-//                     value={volume}
-//                     onChange={handleVolumeChange}
-//                     className="volume-slider"
-//                   />
-//                 </div>
-//               </div>
-//             )}
-
-//             {/* Restart Audio Button */}
-//             <button className="restart-audio-button" onClick={handleRestartAudio}>إعادة تشغيل القصة</button>
-
-//             {/* Option Buttons or Next Button */}
-//             <div className="storyPage-buttons">
-//               {currentStory.options === 'yes' ? (
-//                 <div className='options'>
-//                   {currentStory['option 1'] && (
-//                     <button onClick={() => handleChoice(currentStory['option 1'])}>
-//                       خيار الباء
-//                     </button>
-//                   )}
-//                   {currentStory['option 2'] && (
-//                     <button onClick={() => handleChoice(currentStory['option 2'])}>
-//                       خيار الالف
-//                     </button>
-//                   )}
-//                 </div>
-//               ) : (
-//                 !isStoryEnded && <button className="next-button" onClick={handleNext}>التالي </button>
-//               )}
-//             </div>
-//           </div>
-
-//           {/* Back Step Button to go back in the story */}
-//           {currentStepIndex > 0 && (
-//             <button className="back-step-button" onClick={handleBackStep}>السابق</button>
-//           )}
-
-//         </div>
-//       </div>
-
-//        <div className="storyPage-container">
-//       {/* Your existing StoryPage content */}
-
-//       <PopupModal
-//         isOpen={isModalOpen}
-//         onClose={() => setIsModalOpen(false)}
-//         pathsTaken={pathsTaken}
-//         onRestart={handleRestartStory}
-//       />
-//     </div>
-//     </div>
-
-
-
-//   );
-// };
-
-// export default StoryPage;
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import { readCSVFile } from './csvUtils';
 import './StoryPage.css';
 import { FaVolumeUp } from 'react-icons/fa';
 import PopupModal from './PopupModal';
 import { db, doc, getDoc, setDoc, updateDoc, arrayUnion } from '../firebase/firebaseConfig';
+import QuizPopupModal from './quizPopUpModel'; // Add this to import QuizPopupModal
 
 const StoryPage = ({ storyFolder, designClass,userId, storyId ,  onBack}) => {
   const [storyData, setStoryData] = useState([]);
@@ -232,9 +16,58 @@ const StoryPage = ({ storyFolder, designClass,userId, storyId ,  onBack}) => {
   const [storyPoints, setStoryPoints] = useState(0);
   const audioRef = useRef(null);
   
+  // Add state to manage the quiz modal
+const [quizData, setQuizData] = useState([]); // Holds quiz questions
+const [currentQuestion, setCurrentQuestion] = useState(null); // Tracks current quiz question
+const [isQuizModalOpen, setIsQuizModalOpen] = useState(false); // Controls quiz modal display
 
 
-  console.log("storyFolder: ", storyFolder)
+useEffect(() => {
+  const loadQuizData = async () => {
+    try {
+      const response = await fetch(`${storyFolder}/QuizStory.csv`);
+      if (!response.ok) throw new Error("Failed to fetch quiz CSV file");
+
+      const text = await response.text();
+      const blob = new Blob([text], { type: 'text/csv' });
+      readCSVFile(blob, (data) => setQuizData(data)); // Store parsed quiz data
+    } catch (error) {
+      console.error("Error loading quiz CSV:", error);
+    }
+  };
+  loadQuizData();
+}, [storyFolder]);
+
+// useEffect(() => {
+//   if (storyPoints === 4 && quizData.length > 0) {
+//     setCurrentQuestion(quizData[0]); // Set the first quiz question
+//     setIsModalOpen(false); // Close star modal
+//     setIsQuizModalOpen(true); // Open quiz modal
+//   }
+// }, [storyPoints, quizData]);
+
+
+const handleQuizStart = () => {
+  console.log('handleQuizStart called');
+  console.log('Quiz data:', quizData);
+  setIsQuizModalOpen(true); // Open quiz modal
+  setIsModalOpen(false); // Close the star modal
+  setCurrentQuestion(quizData[0]); // Load the first question for the quiz
+};
+
+useEffect(() => {
+  if (isQuizModalOpen) {
+    console.log('Quiz modal should now be open with question:', currentQuestion);
+  }
+}, [isQuizModalOpen, currentQuestion]);
+
+const handleQuizClose = () => {
+  console.log('Closing quiz modal');
+  setIsQuizModalOpen(false); // Close quiz modal
+  onBack();
+};
+
+  console.log("quizData[0]: ", quizData[0])
 
  useEffect(() => {
     const fetchData = async () => {
@@ -461,10 +294,10 @@ const getStoryByIndex = (index) => {
               {currentStory.options === 'yes' ? (
                 <div className='options'>
                   {currentStory['option 1'] && (
-                    <button onClick={() => handleChoice(currentStory['option 1'])}>خيار الباء</button>
+                    <button onClick={() => handleChoice(currentStory['option 1'])}>الخيار الثاني</button>
                   )}
                   {currentStory['option 2'] && (
-                    <button onClick={() => handleChoice(currentStory['option 2'])}>خيار الالف</button>
+                    <button onClick={() => handleChoice(currentStory['option 2'])}>الخيار الاول</button>
                   )}
                 </div>
               ) : (
@@ -477,16 +310,37 @@ const getStoryByIndex = (index) => {
           )}
         </div>
       </div>
-      <PopupModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        pathsTaken={pathsTaken}
-        onRestart={handleRestartStory}
-        storyPoints={storyPoints}  // New prop for displaying points
-        onNavigateBack={onBack}  // Use `onBack` to navigate to the story list
+    <PopupModal
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      pathsTaken={pathsTaken}
+      onRestart={handleRestartStory}
+      storyPoints={storyPoints} 
+      onNavigateBack={onBack}
+      onQuizStart={handleQuizStart} // Make sure this is here
+
+    />
 
 
-      />
+{isQuizModalOpen && currentQuestion && (
+  <QuizPopupModal
+    isOpen={isQuizModalOpen}
+    questionData={currentQuestion}
+    onClose={handleQuizClose}
+
+    style={{
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)'
+        }
+    }}
+  />
+)}
+
 
     </div>
   );

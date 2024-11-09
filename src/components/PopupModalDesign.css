@@ -21,7 +21,7 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     width: 90%;
     max-width: 350px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'El Messiri', sans-serif;
     color: #ffffff;
 }
 
@@ -40,6 +40,7 @@
 /* Header text */
 .modal-content h2 {
     font-size: 24px;
+    font-family: 'El Messiri', sans-serif;
     color: #333;
     font-weight: bold;
     margin-bottom: 10px;
@@ -49,6 +50,7 @@
 .modal-content p,
 .modal-content ul {
     font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
     color: #555;
     margin-bottom: 20px;
 }
@@ -59,6 +61,7 @@
     color: #ffffff;
     font-weight: bold;
     font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
     padding: 12px 20px;
     border: none;
     border-radius: 10px;

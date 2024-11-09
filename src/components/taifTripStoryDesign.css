@@ -200,6 +200,20 @@ animation: wiggle 0.4s ease-in-out;
     transform: scale(1.1);
 }
 
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 .taifTripStoryDesign .options {
     display: flex;
     justify-content: center;
@@ -208,7 +222,7 @@ animation: wiggle 0.4s ease-in-out;
     /* Space between the buttons */
     position: absolute;
     /* Absolutely position the options on top of the image */
-    top: 48%;
+    top: 65%;
     /* Position the buttons around the middle of the image */
     left: 50%;
     /* Center the buttons horizontally */
@@ -221,20 +235,22 @@ animation: wiggle 0.4s ease-in-out;
 }
 
 .taifTripStoryDesign .options button {
-    background-color: #ffcc00;
-    color: white;
-    font-size: 18px;
-    font-family: 'El Messiri', sans-serif;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #0076d1;
+        color: white;
+        font-size: 18px;
+        font-family: 'El Messiri', sans-serif;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: bounce 1s infinite;
+        /* Apply bounce animation */
 }
 
 .taifTripStoryDesign .options button:hover {
-    background-color: #4410df;
-    transform: scale(1.1);
+    background-color: #edda01;
+        transform: scale(1.1);
 }
 
 .taifTripStoryDesign .storyPage-audio {

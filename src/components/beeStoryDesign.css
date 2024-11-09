@@ -209,6 +209,17 @@ body {
     transform: scale(1.1);
 }
 
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
 .beeStoryDesign .options {
     display: flex;
     justify-content: center;
@@ -230,19 +241,21 @@ body {
 }
 
 .beeStoryDesign .options button {
-    background-color: #ffcc00;
-    color: white;
-    font-size: 18px;
-    font-family: 'El Messiri', sans-serif;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #0076d1;
+        color: white;
+        font-size: 18px;
+        font-family: 'El Messiri', sans-serif;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: bounce 1s infinite;
+        /* Apply bounce animation */
 }
 
 .beeStoryDesign .options button:hover {
-    background-color: #4410df;
+background-color: #edda01;
     transform: scale(1.1);
 }
 

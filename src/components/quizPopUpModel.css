@@ -48,8 +48,8 @@ position: fixed;
 }
 
 .quiz-close-button{
-        color: #ffffff;
-        font-weight: bold;
+    background-color: #b64900b4;
+            font-weight: bold;
         font-size: 16px;
         font-family: 'El Messiri', sans-serif;
         padding: 12px 20px;

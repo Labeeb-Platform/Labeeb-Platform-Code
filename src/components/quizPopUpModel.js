@@ -1,16 +1,13 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import './quizPopUpModel.css';
-
-Modal.setAppElement('#root');
 
 const QuizPopupModal = ({ isOpen, questionData, onClose }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const [showTryAgainMessage, setShowTryAgainMessage] = useState(false);
 
-
-    // Reset state each time modal opens with a new question
+  // Reset state each time modal opens with a new question
   useEffect(() => {
     if (isOpen && questionData) {
       setSelectedAnswer(null);
@@ -20,39 +17,25 @@ const QuizPopupModal = ({ isOpen, questionData, onClose }) => {
     }
   }, [isOpen, questionData]);
 
+  if (!questionData) return null;
 
-   console.log("QuizPopupModal isOpen:", isOpen);
-    console.log("QuizPopupModal questionData:", questionData);
-
-  if (!questionData) return null; // Return early if no question data
-
-
-
-  console.log("QuizPopupModal rendered with questionData:", questionData);
-
- const handleAnswerClick = (answer) => {
+  const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
 
-    // Force lowercase comparison to ensure case-insensitivity and trim whitespace
-      const isCorrect = answer.trim().toLowerCase() === questionData.correctAnswer.trim().toLowerCase();
-    setIsAnswerCorrect(isCorrect);
+    // Ensure trimmed, lower-cased comparison for consistency
+    const processedAnswer = answer.trim().toLowerCase();
+    const correctAnswer = questionData.correctAnswer.trim().toLowerCase();
+    
+    console.log("Selected Answer:", processedAnswer, "| Correct Answer:", correctAnswer);
 
-    console.log("Selected Answer:", answer, "| Processed as:", answer.trim().toLowerCase());
-    console.log("Correct Answer:", questionData.correctAnswer, "| Processed as:", questionData.correctAnswer.trim().toLowerCase());
-
-
-
-      if (isCorrect) {
+    if (processedAnswer === correctAnswer) {
+      setIsAnswerCorrect(true);
       setShowTryAgainMessage(false); // Clear "try again" message
     } else {
+      setIsAnswerCorrect(false);
       setShowTryAgainMessage(true); // Display "try again" message
     }
   };
-
-
-  
-  
-
 
   return (
     <Modal
@@ -77,23 +60,19 @@ const QuizPopupModal = ({ isOpen, questionData, onClose }) => {
       </div>
       
       {/* Show feedback */}
-      {isAnswerCorrect === true && (
+      {isAnswerCorrect && (
         <p className="quiz-feedback correct">إجابة صحيحة!</p>
       )}
-      {showTryAgainMessage && isAnswerCorrect === false && (
-        <p className="quiz-feedback incorrect">إجابة خاطئة. حاول مرة أخرى!</p>
+      {showTryAgainMessage && !isAnswerCorrect && (
+        <p className="quiz-feedback incorrect">حاول مرة اخرى</p>
       )}
 
       {/* Close button appears only if the correct answer is selected */}
       {isAnswerCorrect && (
-        <button className="close-button" onClick={onClose}>إغلاق</button>
+        <button className="quiz-close-button" onClick={onClose}>إغلاق</button>
       )}
     </Modal>
   );
-
-
 };
-
-
 
 export default QuizPopupModal;

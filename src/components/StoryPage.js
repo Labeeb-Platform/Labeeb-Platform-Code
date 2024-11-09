@@ -38,6 +38,7 @@ useEffect(() => {
   loadQuizData();
 }, [storyFolder]);
 
+
 // useEffect(() => {
 //   if (storyPoints === 4 && quizData.length > 0) {
 //     setCurrentQuestion(quizData[0]); // Set the first quiz question
